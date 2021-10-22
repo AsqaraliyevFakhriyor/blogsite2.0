@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container" style="height: 100%; width: 19.1%; padding-top: 100px;">
+        <h3 class="text-light fw-bold font-monospace ms-3">Log-IN</h3>
+        <form action="" method="post" class="form-control bg-primary" style="border: none; ">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="submit" class="form-control bg-warning mt-2" style="border: none;">
+        </form>
+        <div style="width: 110%;">
+            <span style="display: block" class="text-light">Don't have an account?, try to <a class="text-warning" href="{% url 'signup' %}">Sign-UP</a></span>
+        </div>
+        <a class="text-light" href="{% url 'password_reset' %}" style="margin-left: 5.5em;font-size: 14px;">Forget password</a>
+    </div>
+{% endblock content %}

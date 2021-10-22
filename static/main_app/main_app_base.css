@@ -1,0 +1,24 @@
+/* Core styles */
+html,
+body,
+main {
+    height: 100%;
+}
+
+form {
+    border: none;
+}
+
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.contents {
+    padding-top: 200px !important;
+}
+
+.without-border {
+    border: none;
+}

@@ -1,0 +1,7 @@
+venv/
+venv
+Dockerfile
+__pycache__
+__pycache__/
+aws_config.txt
+.env

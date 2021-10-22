@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container" style="height: 100%; padding-top: 50px">
+         <div class="image__section" style="width: 50%; float: left !important;">
+             <img style="width: 95%;" src="{% static 'home_page_img/homeimage.svg' %}" alt="Home page image">
+         </div>
+         <div class="info" style="width: 50%; float: right">
+             <h3 class="fs-3 font-monospace text-light">Welcome man!👋</h3>
+             <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.😁</p>
+             <a href="{% url 'article_list' %}"class="fw-bold btn btn-warning">Read articles 💬</a>
+         </div>
+    </div>
+    
+{% endblock content %}

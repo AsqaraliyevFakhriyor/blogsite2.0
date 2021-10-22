@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container pt-0 pb-4" style="width: 70%;">
+    <div class="card bg-warning me-5" style="width: 100%; border-radius: 5px">
+        {% if article.photo %}
+            <div class="card-img-top" style="max-height: 50rem; overflow: hidden">
+                <img style="border-top-left-radius: 5px;border-top-right-radius: 5px;" src="{{ article.photo.url }}" class="card-img-top" alt="{{ article.title }}">
+            </div>
+        {% else %}
+            <div class="card-img-top" style="max-height: 50rem; overflow: hidden">
+                <img style="border-top-left-radius: 5px;border-top-right-radius: 5px;" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" class="card-img-top" alt="...">
+            </div>
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title fw-bold text-uppercase">{{ object.title }}</h5>
+            <hr>
+            <p class="card-text" style="text-align: justify;">{{ object.body | safe }}.</p>
+            <a href="{% url 'article_edit' article.pk %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'article_list' %}" class="btn btn-primary">All articles</a>
+            <h6 class="card-subtitle mt-3 d-flex text-muted justify-content-end">
+                <div class="text-left"> author: {{ object.author }}</div>
+                <span class="text-dark"> | </span>
+                <div class="text-left"> date: {{ object.date }}</div>
+            </h6>
+        </div>
+    </div>
+</div>
+{% endblock content %}

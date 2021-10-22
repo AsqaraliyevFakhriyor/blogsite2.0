@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container bg-warning p-3 mb-5" style="border-radius: 5px; width: 70%">
+        <h4 class="fs-4 text-dark font-monospace">Edit article: <span class="fw-bold">{{ object.title }}</span></h4>
+        <hr>
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary ml-2 mt-2" style="width: 100%;" >submit</button>
+        </form>
+    </div>
+{% endblock content %}

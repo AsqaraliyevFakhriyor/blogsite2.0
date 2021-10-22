@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container" style="height: 100%; width: 40%; padding-top: 0px;" >
+        <h3 class="text-light fw-bold font-monospace ms-3">Sign-UP</h3>
+        <form action="" method="post" class="form-control bg-primary" style="border: none; ">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="submit" class="form-control bg-warning" style="border: none">
+        </form>
+        <div style="width: 100%; display: flex;">
+            <span  class="text-light m-auto">Have an account?, try to <a class="text-warning" href="{% url 'login' %}">Log-IN</a></span>
+        </div>
+    </div>
+{% endblock content %}

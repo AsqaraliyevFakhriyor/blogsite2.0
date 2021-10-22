@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container bg-warning pb-3 pt-3" style="border-radius: 5px; width: 70%; margin-top: -40px">
+        <h4 class="fs-4 text-dark font-monospace">Create new Articel!</h4>
+        <hr>
+        <form action="" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <button style="width: 100%;" type="submit" class="btn btn-primary mt-2">create</button>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <p class="text-light fw-bold">All articles: {{ object_list.all.count }}</p>
+        <hr class="text-light" style="height: 3px;">
+        <div class="card-container d-flex flex-wrap" style="padding-left: 11px; position: relative">
+            {% for article in object_list %}
+                <div class="card bg-warning me-3 mb-3" style="width: 22rem; border-radius: 5px">
+                    {% if article.photo %}
+                        <div class="card-img-top" style="max-height: 16rem; overflow: hidden">
+                            <img style="border-top-left-radius: 5px;border-top-right-radius: 5px;" src="{{ article.photo.url }}" class="card-img-top" alt="{{ article.title }}">
+                        </div>
+                    {% else %}
+                        <div class="card-img-top" style="max-height: 20rem; overflow: hidden">
+                            <img style="border-top-left-radius: 5px;border-top-right-radius: 5px;" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" class="card-img-top" alt="...">
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.summary | slice:"45" }}.</p>
+                        <a href="{% url 'article_detail' article.pk %}" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
