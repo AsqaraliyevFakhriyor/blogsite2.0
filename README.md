@@ -148,7 +148,7 @@ venv. To run the server, execute the following:
 
 ```
 
-# CREATING docker image 🚢
+# CREATING docker image 🚢, CONTAINER and runing docker CONTAINER
 
 > make sure that you already have docker on your machine!
 
